@@ -1,0 +1,7 @@
+/*Maak hier jouw CSS!*/
+
+body {
+
+    display: grid;
+    border: 1px solid blue;
+}
