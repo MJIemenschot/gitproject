@@ -1,7 +1,79 @@
 /*Maak hier jouw CSS!*/
 
-body {
-
-    display: grid;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
     border: 1px solid blue;
 }
+.gridContaner {
+    background-color: lightblue;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 240px auto 100px 50px 50px;
+    grid-template-areas:
+            "left topright topright"
+        "leftside topright topright"
+        "leftside middle right"
+            "leftside middle empty"
+        "footer footer footer";
+    /* .gridContaner > * {margin:16px;}
+     */
+    grid-gap: 16px;
+}
+.left, .leftside, .topright, .right, .middle, footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    background-color: dodgerblue;
+    grid-area: left;
+
+}
+.leftside {
+    background-color: aquamarine;
+    grid-area: leftside;
+    padding: 10px;
+}
+.topright{
+    background-color: orange;
+    grid-area: topright;
+}
+.right {
+    background-color: aquamarine;
+    grid-area: right;
+}
+.empty {
+    grid-area: empty;
+}
+.middle {
+    background-color: darkolivegreen;
+    grid-area: middle;
+
+}
+footer {
+    background-color: seagreen;
+    grid-area: footer;
+}
+@media screen and (max-width: 600px) {
+
+    .gridContaner {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+
+        grid-template-areas:
+            "left"
+        "leftside"
+               "topright"
+        "right"
+            "middle"
+            "empty"
+        "footer";
+    }
+
+
+    }
